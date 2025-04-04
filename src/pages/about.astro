@@ -1,5 +1,12 @@
 ---
 const pageTitle = 'About Me'
+const identity = {
+    firstname: "Justin Youngbird",
+    country: "USA",
+    occupation:"student",
+    hobbies:['computers', 'video games', 'writing']
+};
+const skills = ['HTML', 'CSS', 'Javascript','GDscript', 'Python', 'PHP', 'React',  'Astro',  'C++', 'Markdown']
 ---
 <html lang="en">
   <head>
@@ -15,8 +22,20 @@ const pageTitle = 'About Me'
     <h1>My Astro Site</h1>
     <h1>{pageTitle}</h1>
 
-    <p>My name is Clevland brown/ and i am proud to be/ back in my home town/ with my new family./ with old friends/ and new friends/ and even a bear/</p>
+    <p>My name is Justin Youngbird and i am learning how to use Astro... yea wild</p>
 
     <p>I will update this site as a go though the tooterals</p>
+
+    <p>Here are a few facts about me</p> 
+    <ul>
+        <li>My name {identity.firstname}</li>
+        <li>I live in {identity.country} and i am a {identity.occupation}.</li>
+        {identity.hobbies.length >= 2 &&
+        <li>Two of my hobbies are: {identity.hobbies[0]} and {identity.hobbies[1]} </li>}
+    </ul>
+    <p>My skills are:</p>
+    <ul>
+        {skills.map((skill) => <li>{skill}</li>)}
+    </ul>
 </body>
 </html>

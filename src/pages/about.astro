@@ -1,7 +1,6 @@
 ---
+import BaseLayout from '../layouts/BaseLayout.astro';
 import '../styles/global.css'
-import Header from '../components/Header.astro';
-import Footer from '../components/Footer.astro';
 //local variables
 const pageTitle = 'About Me';
 const identity = {
@@ -20,11 +19,7 @@ const fontWeight = 'bold'
 const textCase = 'capitalize'
 
 ---
-<html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width" />
-    <title>{pageTitle}</title>
+<BaseLayout PageTitle={pageTitle}>
     <style define:vars={{skillColor, fontWeight, textCase}}>
         h1 {
           color: purple;
@@ -37,10 +32,7 @@ const textCase = 'capitalize'
             text-transform: var(--textCase);
         }
       </style>
-  </head>
-<body>
-    <Header/>
-
+  
     <h1>My Astro Site</h1>
     <h1>{pageTitle}</h1>
 
@@ -62,9 +54,4 @@ const textCase = 'capitalize'
     {happy && <p>I am happy to lean Astro</p>}
     {finished && <p>I finished this tooteral</p>}
     {goal === 3 ? <p>My goal is to finish in 3 days</p> : <p>My goal is not 3 days</p>}
-    <Footer/>
-    <script>
-			import "../scripts/menu"
-		</script>
-</body>
-</html>
+  </BaseLayout>

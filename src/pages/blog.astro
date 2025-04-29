@@ -11,6 +11,6 @@ const pageTitle = 'Blog page';
     <p>this is where i will post about my journy leaning astro</p>
 
     <ul>
-        {allPosts.map((post: any) => <BlogPost href={post.url} title={post.frontmatter.title}/>)}
+        {allPosts.map((post: any) => <BlogPost url={post.url} title={post.frontmatter.title}/>)}
     </ul>
 </BaseLayout>
